@@ -1,0 +1,55 @@
+{
+  "name": "with-promise-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dest/index.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rimraf \"./dest/**/*\"",
+    "build": "npm run clean && tsc",
+    "lint": "tslint --fix -c ./tslint.json -t verbose \"./src/**/*.ts*\"",
+    "lint:check:conflict": "tslint-config-prettier-check ./tslint.json",
+    "lint-staged": "lint-staged"
+  },
+  "files": [
+    "README.md",
+    "package.json",
+    "dest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Thiry1/with-promise-cache.git"
+  },
+  "keywords": [
+    "promise",
+    "cache"
+  ],
+  "author": "thiry",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Thiry1/with-promise-cache/issues"
+  },
+  "homepage": "https://github.com/Thiry1/with-promise-cache#readme",
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint -p ./lint.tsconfig.json -c ./tslint.json -t verbose --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.16.1",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.2.4"
+  }
+}
