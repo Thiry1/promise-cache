@@ -7,8 +7,8 @@ in-memory promise cache client.
 
 ## Usage
 ```typescript
-import { withPromiseCache } from "with-promise-cache";
-
-await withPromiseCache(yourAsyncFunction)("cacheKey")(yourAsyncFunctionArgs)
+import { PromiseCache } from "with-promise-cache";
+const func = new PromiseCache().with(yourAsyncFunction);
+await func("cacheKey")(yourAsyncFunctionArgs)
 
 ```
